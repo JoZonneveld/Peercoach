@@ -1,0 +1,3 @@
+Pycharm --- https://www.jetbrains.com/pycharm/
+student lincense-- https://www.jetbrains.com/shop/eform/students
+Python 3.6  --- https://www.python.org/downloads/

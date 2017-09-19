@@ -4,7 +4,7 @@
 
 getal1 = int(input("Getal 1: "))
 
-operator = input("Kies een operator + - / *: ")
+operator = input("Kies een operator + - / * ")
 
 getal2 = int(input("Getal 2: "))
 

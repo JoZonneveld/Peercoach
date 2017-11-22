@@ -9,6 +9,9 @@ class Player:
         self.HP = hp
         self.Vec = vec
 
+    def Move(self):
+        self.Vec.X -= 15
+
 class Obstakel:
     def __init__(self, color, rect):
         self.Color = color
@@ -31,4 +34,8 @@ player = Player("Karel", 1000, Vector(115, 100))
 obs = Obstakel("blauw", Rect(10, 15, 100, 50))
 
 game = Game(player, obs)
+
 print(game.Player.Vec.X)
+game.Player.Move()
+print(game.Player.Vec.X)
+

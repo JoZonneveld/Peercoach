@@ -1,3 +1,9 @@
+import pygame as pg
+
+
+pg.init()
+
+
 class Node:
     """docstring for Node."""
     def __init__(self, value, tail):

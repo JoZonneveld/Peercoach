@@ -1,20 +1,22 @@
 import pygame as pg
+from Colors import *
 class Rectangle:
-    def __init__(self, screen, color, x, y, w, h):
-        self.Screen = screen
-        self.Color = color
-        self.X = x
-        self.Y = y
-        self.W = w
-        self.H = h
+    def __init__(self, x, y, w, h): #constructor
+        self.Rect = pg.rect.Rect((x, y, w, h)) #create rectangle
 
-    def Update(self):
-        for i in pg.event.get():
-            if i.type == pg.QUIT:
-                running = False
-            if i.type == pg.KEYDOWN:
-                if i.key == pg.K_LEFT:
-                    self.X -= 1
-                if i.key == pg.K_RIGHT:
-                    self.X += 1
-        pg.draw.rect(self.Screen, self.Color, (self.X, self.Y, 300, 300))
+    def Update(self, screen):
+        # print(x, y)
+        key = pg.key.get_pressed()
+        if key[pg.K_LEFT]:
+            if self.Rect.left - 10 >= 0:
+                self.Rect.move_ip(-5, 0)
+        if key[pg.K_RIGHT]:
+            self.Rect.move_ip(5, 0)
+        if key[pg.K_UP]:
+            if self.Rect.top - 10 >= 0:
+                self.Rect.move_ip(0, -5)
+        if key[pg.K_DOWN]:
+            self.Rect.move_ip(0, 5)
+
+    def Draw(self, screen):
+        pg.draw.rect(screen, Blue, self.Rect)

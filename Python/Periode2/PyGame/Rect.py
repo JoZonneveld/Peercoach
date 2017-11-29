@@ -6,12 +6,14 @@ class Rectangle:
 
     def Update(self, screen):
         # print(x, y)
+        x, y = screen.get_size()
         key = pg.key.get_pressed()
         if key[pg.K_LEFT]:
             if self.Rect.left - 10 >= 0:
                 self.Rect.move_ip(-5, 0)
         if key[pg.K_RIGHT]:
-            self.Rect.move_ip(5, 0)
+            if self.Rect.right + 10 <= x:
+                self.Rect.move_ip(5, 0)
         if key[pg.K_UP]:
             if self.Rect.top - 10 >= 0:
                 self.Rect.move_ip(0, -5)

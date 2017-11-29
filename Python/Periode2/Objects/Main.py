@@ -29,13 +29,18 @@ class Vector:
         self.X = x
         self.Y = y
 
-player = Player("Karel", 1000, Vector(115, 100))
 
-obs = Obstakel("blauw", Rect(10, 15, 100, 50))
+def function():
+    print("func")
 
-game = Game(player, obs)
-
-print(game.Player.Vec.X)
-game.Player.Move()
-print(game.Player.Vec.X)
+function()
+# player = Player("Karel", 1000, Vector(115, 100))
+#
+# obs = Obstakel("blauw", Rect(10, 15, 100, 50))
+#
+# game = Game(player, obs)
+#
+# print(game.Player.Vec.X)
+# game.Player.Move()
+# print(game.Player.Vec.X)
 

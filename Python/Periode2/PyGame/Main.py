@@ -1,24 +1,28 @@
-import pygame as pg
 from Rect import *
-
-
+from Colors import *
+#starting pygame
 pg.init()
-screen = pg.display.set_mode([800,600])
-white = [255, 255, 255]
-red = [255, 0, 0]
-pg.display.set_caption("My program")
+screen = pg.display.set_mode([800,600]) #window size
+pg.display.set_caption("Pygame") # Name Window
+clock = pg.time.Clock() # setting a clock
 
-rect = Rectangle(screen, red, 399,150,100,50)
-#399,150,100,50
+Rect = Rectangle(200,300,50,50) #creating a Rect
 
-running = True
+running = True #loop condition
 while running:
-
-    rect.Update()
-
-    for i in pg.event.get():
-        if i.type == pg.QUIT:
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
             running = False
-            quit()
-    pg.display.update()
-quit()
+
+        if event.type == pg.KEYDOWN:
+            if event.key == pg.K_ESCAPE:
+                running = False
+    screen.fill(Black) #create background color
+
+    Rect.Draw(screen) #call Rect Draw
+    Rect.Update(screen) #call Rect Update
+
+    pg.display.update() #update display
+    clock.tick(60) # set framerate
+
+quit() #quit the code

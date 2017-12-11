@@ -18,11 +18,10 @@ Enemy1 = Enemy(Vector(125, 50), Blue)
 #END CREATE GAME OBJECTS
 
 #CREATE LIST
-Objects = list()
+Enemys = list()
 #ADD GAME OBJECTS TO LIST
-Objects.append(Player)
-Objects.append(Enemy0)
-Objects.append(Enemy1)
+Enemys.append(Enemy0)
+Enemys.append(Enemy1)
 #END CREATE LIST
 
 running = True #loop condition
@@ -36,9 +35,15 @@ while running:
             if event.key == pg.K_ESCAPE:
                 running = False
 
-    for Object in Objects:
-        Object.Update(screen)
-        Object.Draw(screen)
+    Player.Update(screen, Enemys)
+    Player.Draw(screen)
+
+    for Enemy in Enemys:
+        Enemy.Update(screen, Player)
+        Enemy.Draw(screen)
+
+        if Enemy.Dead == True:
+            Enemys.remove(Enemy)
 
     pg.display.update() #update display
     clock.tick(60) # set framerate

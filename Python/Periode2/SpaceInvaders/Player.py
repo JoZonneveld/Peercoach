@@ -9,12 +9,14 @@ class Player:
         self.Rect = pg.rect.Rect((vec.X, vec.Y, 50, 50))
         self.Projectiles = list()
         self.Counter = 0
+        self.Dead = False
 
-    def CreateProjectile(self):
+    #Region Methods
+    def CreateProjectile(self, Enemys):
         x, y = self.Rect.midtop
-        self.Projectiles.append(Projectile(x, y))
+        self.Projectiles.append(Projectile(Vector(x,y), "Player", Enemys))
 
-    def Update(self, screen):
+    def Keyhandelers(self, screen, Enemys):
         x, y = screen.get_size()
         key = pg.key.get_pressed()
         if key[pg.K_LEFT]:
@@ -28,11 +30,24 @@ class Player:
 
         if key[pg.K_SPACE]:
             if self.Counter <= 0:
-                self.CreateProjectile()
+                self.CreateProjectile(Enemys)
                 self.Counter = 45;
+    #End region Methods
+
+    # -----------------------------------------------------------------------------------------------------------
+
+    #Region Update & Draw
+    def Update(self, screen, Enemys):
+
+        self.Keyhandelers(screen, Enemys)
 
         for Projectile in self.Projectiles:
             Projectile.Update(screen)
             Projectile.Draw(screen)
+
+            if Projectile.Rect.y < 0:
+                self.Projectiles.remove(Projectile)
+
     def Draw(self, screen):
         pg.draw.rect(screen, self.Color, self.Rect)
+    #End Region Update & Draw

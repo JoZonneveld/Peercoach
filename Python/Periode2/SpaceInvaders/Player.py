@@ -27,8 +27,6 @@ class Player:
         self.Counter -= 1
 
         if key[pg.K_SPACE]:
-            print(self.Counter)
-
             if self.Counter <= 0:
                 self.CreateProjectile()
                 self.Counter = 45;

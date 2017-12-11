@@ -1,4 +1,6 @@
-from Rect import *
+from Player import *
+from Vector import *
+from Projectile import *
 from Colors import *
 #starting pygame
 pg.init()
@@ -8,13 +10,14 @@ clock = pg.time.Clock() # setting a clock
 
 
 #CREATE GAME OBJECTS
-Rect = Rectangle(200,300,50,50) #creating a Rect
+# Rect = Rectangle(200,300,50,50) #creating a Rect
+Player = Player(Vector(375, 525), Green)
 #END CREATE GAME OBJECTS
 
 #CREATE LIST
 Objects = list()
 #ADD GAME OBJECTS TO LIST
-Objects.append(Rect)
+Objects.append(Player)
 #END CREATE LIST
 
 running = True #loop condition

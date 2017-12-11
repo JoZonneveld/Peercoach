@@ -18,7 +18,7 @@ class Ball:
         # self.y += 1
         # self.y += self.y_speed
 
-        self.vec.x += self.x_speed
+        # self.vec.x += self.x_speed
 
         self.y_speed += self.gravity
         if self.y_speed > self.y_max_speed:

@@ -5,7 +5,7 @@ from Colors import *
 #starting pygame
 pg.init()
 screen = pg.display.set_mode([800,600]) #window size
-pg.display.set_caption("Pygame") # Name Window
+pg.display.set_caption("Naam") # Name Window
 clock = pg.time.Clock() # setting a clock
 
 
@@ -22,7 +22,7 @@ Objects.append(Player)
 
 running = True #loop condition
 while running:
-    screen.fill(Black) #create background color
+    screen.fill(White) #create background color
 
     for event in pg.event.get():
         if event.type == pg.QUIT:

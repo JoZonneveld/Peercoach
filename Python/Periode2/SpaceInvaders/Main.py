@@ -16,7 +16,7 @@ Player = Player(Vector(375, 525), Green)
 Enemy0 = Enemy(Vector(50, 50), Blue)
 Enemy1 = Enemy(Vector(125, 50), Blue)
 #END CREATE GAME OBJECTS
-#test
+
 #CREATE LIST
 Enemys = list()
 #ADD GAME OBJECTS TO LIST

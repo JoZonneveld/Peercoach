@@ -41,6 +41,7 @@ class Enemy:
 
     # Region Update & Draw
     def Update(self, screen, Player):
+        print(self.Rect.top)
         x, y = screen.get_size()
         self.Move(screen, Player)
 

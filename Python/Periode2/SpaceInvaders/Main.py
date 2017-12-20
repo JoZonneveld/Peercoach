@@ -6,7 +6,7 @@ from Enemy import *
 #starting pygame
 pg.init()
 screen = pg.display.set_mode([800,600]) #window size
-pg.display.set_caption("Naam") # Name Window
+pg.display.set_caption("Space Invaders") # Name Window
 clock = pg.time.Clock() # setting a clock
 
 
@@ -16,6 +16,7 @@ Player = Player(Vector(375, 525), Green)
 Enemy0 = Enemy(Vector(50, 50), Blue)
 Enemy1 = Enemy(Vector(125, 50), Blue)
 #END CREATE GAME OBJECTS
+
 
 #CREATE LIST
 Enemys = list()

@@ -19,6 +19,7 @@ class Projectile:
 
 
     def Update(self, screen):
+        #print(self.Rect.bottom)
         if self.Kind == "Player":
             self.Rect.move_ip(0, -8)
         else:
